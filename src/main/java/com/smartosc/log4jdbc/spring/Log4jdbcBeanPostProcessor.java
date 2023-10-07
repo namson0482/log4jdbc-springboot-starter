@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.integralblue.log4jdbc.spring;
+package com.smartosc.log4jdbc.spring;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;

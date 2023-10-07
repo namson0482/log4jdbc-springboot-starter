@@ -1,2 +1,2 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.integralblue.log4jdbc.spring.Log4jdbcAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.smartosc.log4jdbc.spring.Spring2Log4jdbcBeanPostProcessor
 
