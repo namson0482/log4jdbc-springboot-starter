@@ -18,9 +18,9 @@ Quick Start
 * **Download** — Depend on this library using, for example, Maven:
 ```xml
   <dependency>
-    <groupId>com.integralblue</groupId>
-    <artifactId>log4jdbc-spring-boot-starter</artifactId>
-    <version>[INSERT VERSION HERE]</version>
+    <groupId>com.smartosc</groupId>
+    <artifactId>log4jdbc-springboot-starter</artifactId>
+    <version>2.0.0-smartosc-custom</version>
   </dependency>
 ```
 * **Configure** — In application.properties, enable a logger (for example, `logging.level.jdbc.sqlonly=ERROR`). See [Loggers](#loggers) for details.

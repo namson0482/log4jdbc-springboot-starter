@@ -13,6 +13,10 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
+/**
+ * @author Son Vu
+ * @version 1.0
+ */
 @Configuration
 @ConditionalOnClass(DataSourceSpy.class)
 @AutoConfigureAfter(DataSourceAutoConfiguration.class)

@@ -27,6 +27,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.core.env.Environment;
 
+import java.util.Objects;
+
 /**
  * A {@link BeanPostProcessor} implementation that sets up log4jdbc logging.
  * To do so, it:
@@ -35,7 +37,8 @@ import org.springframework.core.env.Environment;
  * <li>Wraps {@link DataSource} beans with {@link DataSourceSpy}</li>
  * </ul>
  *
- * @author Craig Andrews
+ * @author Son Vu
+ * @version 1.0
  * @see net.sf.log4jdbc.Properties
  */
 public class Log4jdbcBeanPostProcessor implements BeanPostProcessor {
@@ -69,8 +72,7 @@ public class Log4jdbcBeanPostProcessor implements BeanPostProcessor {
 	public Object postProcessBeforeInitialization(final Object bean, final String beanName) throws BeansException {
 		if (bean instanceof DataSource) {
 			return new DataSourceSpy((DataSource) bean);
-		}
-		else {
+		} else {
 			return bean;
 		}
 	}
@@ -86,7 +88,7 @@ public class Log4jdbcBeanPostProcessor implements BeanPostProcessor {
 		// See net.sf.log4jdbc.Properties.getProperties()
 		for (final String property : PROPERTIES_TO_COPY) {
 			if (this.environment.containsProperty(property)) {
-				System.setProperty(property, this.environment.getProperty(property));
+				System.setProperty(property, Objects.requireNonNull(this.environment.getProperty(property)));
 			}
 		}
 		// Use slf4j by default.
