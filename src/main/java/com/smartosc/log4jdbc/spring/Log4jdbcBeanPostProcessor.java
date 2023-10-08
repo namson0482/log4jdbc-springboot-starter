@@ -16,8 +16,8 @@
 
 package com.smartosc.log4jdbc.spring;
 
-import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
+
 
 import net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator;
 import net.sf.log4jdbc.sql.jdbcapi.DataSourceSpy;
@@ -26,6 +26,8 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.core.env.Environment;
+
+import javax.annotation.PostConstruct;
 
 import java.util.Objects;
 
@@ -42,9 +44,6 @@ import java.util.Objects;
  * @see net.sf.log4jdbc.Properties
  */
 public class Log4jdbcBeanPostProcessor implements BeanPostProcessor {
-	@Autowired
-	private Environment environment;
-
 	private static final String[] PROPERTIES_TO_COPY = {
 			"log4jdbc.log4j2.properties.file",
 			"log4jdbc.debug.stack.prefix",
@@ -66,7 +65,9 @@ public class Log4jdbcBeanPostProcessor implements BeanPostProcessor {
 			"log4jdbc.trim.sql.extrablanklines",
 			"log4jdbc.suppress.generated.keys.exception",
 			"log4jdbc.log4j2.properties.file",
-			};
+	};
+	@Autowired
+	private Environment environment;
 
 	@Override
 	public Object postProcessBeforeInitialization(final Object bean, final String beanName) throws BeansException {
