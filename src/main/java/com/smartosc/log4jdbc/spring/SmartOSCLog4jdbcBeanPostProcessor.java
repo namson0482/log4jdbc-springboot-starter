@@ -49,7 +49,7 @@ import org.springframework.core.env.Environment;
 @ConditionalOnClass(DataSourceSpy.class)
 @AutoConfigureAfter(DataSourceAutoConfiguration.class)
 @SuppressWarnings("checkstyle:hideutilityclassconstructor")
-public class Spring2Log4jdbcBeanPostProcessor extends Log4jdbcBeanPostProcessor {
+public class SmartOSCLog4jdbcBeanPostProcessor extends Log4jdbcBeanPostProcessor {
 
 
 	@Override
