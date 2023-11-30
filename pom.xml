@@ -119,25 +119,25 @@
                   </goals>
               </execution>
           </executions>
-      </plugin>-->
+      </plugin>
 
-     <!--<plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>copy-dependencies</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.build.directory}/${project.build.finalName}.lib</outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>-->
-
+      <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-dependency-plugin</artifactId>
+         <executions>
+           <execution>
+             <id>copy-dependencies</id>
+             <phase>prepare-package</phase>
+             <goals>
+               <goal>copy-dependencies</goal>
+             </goals>
+             <configuration>
+               <outputDirectory>${project.build.directory}/${project.build.finalName}.lib</outputDirectory>
+             </configuration>
+           </execution>
+         </executions>
+       </plugin>
+       -->
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <executions>
@@ -206,13 +206,6 @@
       <scope>compile</scope>
       <version>4.0.3</version>
     </dependency>
-    <dependency>
-      <artifactId>lombok</artifactId>
-      <groupId>org.projectlombok</groupId>
-      <scope>compile</scope>
-      <version>1.18.26</version>
-    </dependency>
-
     <dependency>
       <artifactId>google-java-format</artifactId>
       <groupId>com.google.googlejavaformat</groupId>
